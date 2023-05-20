@@ -1,0 +1,57 @@
+@import "./common.less";
+
+/* 1.设置颜色 start */
+.base-bg-grey {
+    background-color: @baseGrey;
+  }
+  .base-bg-red{
+    background-color: @baseRed;
+  }
+  /*1.设置颜色 end */
+.base-cl-grey{
+    color:@baseGrey;
+}
+/* 1.设置flex布局 start*/
+.base-flex-center{
+    display: flex;
+    justify-content: center;
+}
+.base-flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+.base-flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+.base-flex-align-center{
+    display: flex;
+    align-items: center;
+}
+.base-radius-10{
+    border-radius:10px;
+}
+/* 设置背景图片*/
+.bg-logo{
+    width: 200px;
+    height:60px;
+    background-image: url('~@/assets/baseLogo.png');
+}
+/* 设置百分比高度*/
+.base-h-100{
+    height:100%
+}
+/*设置hover*/
+.base-hover{
+    color:@baseBlack;
+    &:hover{
+        color:@baseRed;
+        background-color: @baseGrey;
+    }
+}
+.base-grey{
+    color:@colorGrey;
+}
+.base-black{
+    color:@baseBlack
+}

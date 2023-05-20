@@ -1,0 +1,46 @@
+/* 1.设置颜色 start */
+.base-bg-grey {
+  background-color: #e0e0e0;
+}
+.base-bg-red {
+  background-color: #ec4141;
+}
+/*1.设置颜色 end */
+/* 1.设置flex布局 start*/
+.base-flex-center {
+  display: flex;
+  justify-content: center;
+}
+.base-flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+.base-flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+.base-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+.base-radius-10 {
+  border-radius: 10px;
+}
+/* 设置背景图片*/
+.bg-logo {
+  width: 200px;
+  height: 60px;
+  background-image: url('~@/assets/baseLogo.png');
+}
+/* 设置百分比高度*/
+.base-h-100 {
+  height: 100%;
+}
+/*设置hover*/
+.base-hover {
+  color: #333333;
+}
+.base-hover:hover {
+  color: #ec4141;
+  background-color: #e0e0e0;
+}
