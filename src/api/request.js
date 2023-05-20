@@ -4,7 +4,7 @@ import axios from "axios";
 //2.request就是axios，只不过是二次封装后的axios
 const requests = axios.create({
   //配置对象
-  baseURL: "http://117.50.177.183:3000", //代表基于哪个路径
+  baseURL: "http://127.0.0.1:3000", //代表基于哪个路径
   withCredentials: true,
   timeout: 5000, //代表请求超时的时间5s
 });
