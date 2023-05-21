@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkmy_cloud_music"]=self["webpackChunkmy_cloud_music"]||[]).push([[919],{1919:function(u,n,l){l.r(n),l.d(n,{default:function(){return f}});var c=function(){var u=this,n=u._self._c;return n("div",[u._v("歌单")])},e=[],s={name:"SongList"},t=s,i=l(1001),r=(0,i.Z)(t,c,e,!1,null,null,null),f=r.exports}}]);
-//# sourceMappingURL=919.afab8c58.js.map
