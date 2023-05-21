@@ -16,5 +16,14 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [new NodePolyfillPlugin()],
   },
+  devServer: {
+    proxy: {
+      "/": {
+        target: "http://117.50.177.183:3000",
+        changeOrigin: true,
+        ws: false,
+      },
+    },
+  },
   publicPath: "./",
 });
