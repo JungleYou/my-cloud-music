@@ -12,8 +12,9 @@ const requests = axios.create({
 requests.interceptors.request.use((config) => {
   //config:配置对象，对象里面有一个属性很重要，headers请求头
   if (localStorage.getItem("cookie")) {
-    config.headers.Cookie = localStorage.getItem("cookie");
-    // config.headers.Authorization = localStorage.getItem("cookie");
+    const cookie = localStorage.getItem("cookie");
+    // console.log(config);
+    config.headers.cookie = cookie;
   }
   return config;
 });

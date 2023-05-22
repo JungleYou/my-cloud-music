@@ -283,9 +283,7 @@ const mutations = {
   },
   // 存储搜索信息
   SEARCH(state, data) {
-    if (!state.play_list_songs) {
-      state.play_list_songs = data.songs;
-    }
+    state.play_list_songs = data.songs;
     state.search_info = data;
   },
   // 存储播客信息

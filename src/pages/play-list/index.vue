@@ -27,7 +27,9 @@
         </el-row>
         <el-row type="flex" align="middle">
           <el-col :span="6"
-            ><el-button icon="el-icon-plus" round>播放全部</el-button></el-col
+            ><el-button icon="el-icon-plus" round @click="playAll"
+              >播放全部</el-button
+            ></el-col
           >
           <el-col :span="4"
             ><el-button icon="el-icon-folder" round>收藏</el-button></el-col
@@ -76,6 +78,7 @@
 </template>
 
 <script>
+// 歌单详情页面
 import { mapState } from "vuex";
 export default {
   name: "PlayList",
@@ -89,6 +92,15 @@ export default {
     handleSelect(e) {
       // console.log(e);
     },
+    playAll() {
+      try {
+        const indexs = 0;
+        const id = this.play_list_songs[0].id;
+        this.$store.dispatch("getSongUrl", { id, indexs });
+      } catch (e) {
+        console.log(e);
+      }
+    },
   },
   filters: {
     FormatTime: function (time) {
@@ -101,7 +113,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["play_list_detail"]),
+    ...mapState(["play_list_detail", "play_list_songs"]),
   },
 };
 </script>

@@ -6,7 +6,9 @@
     <div class="kn">你可能感兴趣</div>
     <el-row type="flex" align="middle">
       <el-col :span="6"
-        ><el-button icon="el-icon-plus" round>播放全部</el-button></el-col
+        ><el-button icon="el-icon-plus" round @click="playAll"
+          >播放全部</el-button
+        ></el-col
       >
       <el-col :span="4"
         ><el-button icon="el-icon-download" round>下载全部</el-button></el-col
@@ -58,6 +60,15 @@ export default {
       let indexs = e.target.dataset.indexs;
       // this.activeItem = indexs;
       this.$store.dispatch("getSongUrl", { id, indexs });
+    },
+    playAll() {
+      try {
+        const indexs = 0;
+        const id = this.play_list_songs[0].id;
+        this.$store.dispatch("getSongUrl", { id, indexs });
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };

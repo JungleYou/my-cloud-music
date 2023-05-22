@@ -20,7 +20,6 @@ export default {
   data() {
     return {
       activeIndex: "1",
-      activeIndex2: "1",
     };
   },
   methods: {
@@ -34,4 +33,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-menu-demo {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+}
 </style>

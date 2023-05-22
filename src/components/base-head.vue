@@ -1,7 +1,7 @@
 <template>
   <div class="container base-flex-between base-bg-red">
     <!-- 左上角图片 start -->
-    <div class="bg-logo"></div>
+    <div></div>
     <!-- 左上角图片 end -->
     <!-- 中间搜索页面以及左右的按钮 start -->
     <div class="search base-flex-between">
@@ -64,11 +64,7 @@
 import { mapState } from "vuex";
 export default {
   name: "BaseHead",
-  mounted() {
-    if (localStorage.getItem("cookie")) {
-      this.$store.dispatch("getAccountInfo");
-    }
-  },
+  mounted() {},
   data() {
     return {
       urls: "https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",

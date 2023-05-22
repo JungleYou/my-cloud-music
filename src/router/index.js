@@ -34,8 +34,8 @@ const router = new VueRouter({
         },
         {
           name: "SongList",
-          path: "/FindMusic/SongList",
-          component: () => import("@/pages/find-music/song-list"),
+          path: "/FindMusic/AllList",
+          component: () => import("@/pages/find-music/all-list"),
         },
       ],
     },

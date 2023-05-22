@@ -14,6 +14,16 @@ import BaseMain from "@/components/base-main.vue";
 import BaseFooter from "@/components/base-footer.vue";
 export default {
   name: "App",
+  mounted() {
+    this.$store.dispatch("getBanners");
+    this.$store.dispatch("getTopPlayList", { limit: 52, offset: 0 });
+    this.$store.dispatch("getHotBoke");
+    this.$store.dispatch("getMvFirst", { offset: 30, limit: 0 });
+    if (localStorage.getItem("cookie")) {
+      // console.log(localStorage.getItem("cookie"));
+      this.$store.dispatch("getAccountInfo");
+    }
+  },
   components: {
     BaseHead,
     BaseMain,

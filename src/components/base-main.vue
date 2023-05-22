@@ -46,10 +46,6 @@ import { mapGetters, mapState } from "vuex";
 export default {
   name: "BaseMain",
   mounted() {
-    this.$store.dispatch("getBanners");
-    this.$store.dispatch("getTopPlayList");
-    this.$store.dispatch("getHotBoke");
-    this.$store.dispatch("getMvFirst", { offset: 30, limit: 0 });
     // this.$store.dispatch("getMvFirst");
   },
   methods: {

@@ -100,10 +100,10 @@
                 item.name.substring(0, 13)
               }}</el-col>
               <el-col :span="6" :data-songId="item.id" :data-indexs="index">{{
-                item.ar[0].name
+                item.ar ? item.ar[0].name : item.artists[0].name
               }}</el-col>
               <el-col :span="6" :data-songId="item.id" :data-indexs="index">{{
-                item.al.name
+                item.al ? item.al.name : item.album.name
               }}</el-col>
             </el-row>
           </div>

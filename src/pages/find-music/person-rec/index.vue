@@ -17,18 +17,16 @@
       <el-row :gutter="5">
         <!-- 歌单单元格 start -->
         <el-col
+          class="item"
           :span="6"
           v-for="item in top_playlists"
           :key="item.id"
-          :style="{ height: '263px', overFlow: 'hidden' }"
           ><el-card :body-style="{ padding: '0px' }">
             <img :src="item.coverImgUrl" class="image" :data-playId="item.id" />
-            <div style="padding: 6px,height:30px">
+            <div class="title">
               <span>{{ item.name }}</span>
               <div class="bottom clearfix">
-                <time class="time">{{
-                  item.description.substring(0, 30)
-                }}</time>
+                <time class="des">{{ item.description.substring(0, 30) }}</time>
               </div>
             </div>
           </el-card></el-col
@@ -91,7 +89,7 @@
           ><el-card :body-style="{ padding: '0px' }">
             <img style="height: 150px" :src="mv.cover" class="image" />
             <div style="padding: 6px,height:30px">
-              <span>{{ mv.name }}</span>
+              <span>{{ mv.name.substring(0, 10) }}</span>
               <div class="bottom clearfix">
                 <time class="time">{{ mv.artistName }}</time>
               </div>
@@ -118,19 +116,19 @@ export default {
     };
   },
   methods: {
-    toPlayList(e) {
-      // console.dir(e.target);
-      if (e.target.dataset) {
-        console.log(e.target.dataset.playid);
-        let id = e.target.dataset.playid;
-        this.$store.dispatch("getPlayListSongs", id);
-        this.$router.push({ name: "PlayList" });
-      }
-    },
     toBoke(e) {
       // console.log(e.target.dataset);
       let id = e.target.dataset.id;
       if (id) {
+        this.$store.dispatch("getPlayListSongs", id);
+        this.$router.push({ name: "PlayList" });
+      }
+    },
+    toPlayList(e) {
+      // console.dir(e.target);
+      if (e.target.dataset) {
+        // console.log(e.target.dataset.playid);
+        let id = e.target.dataset.playid;
         this.$store.dispatch("getPlayListSongs", id);
         this.$router.push({ name: "PlayList" });
       }
@@ -150,8 +148,43 @@ export default {
     margin: 10px 0;
   }
   .list {
+    padding-left: 20px;
+    background-color: #eeeeee;
+    &:hover {
+      cursor: pointer;
+    }
     .el-col {
       margin-top: 10px;
+    }
+    .item {
+      width: 190px;
+      height: 270px;
+      overflow: hidden;
+    }
+    // 卡片布局
+    .des {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .button {
+      padding: 0;
+      float: right;
+    }
+
+    .image {
+      width: 100%;
+      display: block;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+      display: table;
+      content: "";
+    }
+
+    .clearfix:after {
+      clear: both;
     }
   }
   .boke {
@@ -172,6 +205,7 @@ export default {
       }
     }
   }
+  // 轮播图样式
   .el-carousel__item img {
     width: 100%;
     height: 100%;
@@ -185,36 +219,6 @@ export default {
 
   .el-carousel__item:nth-child(2n + 1) {
     background-color: #d3dce6;
-  }
-  // 卡片布局
-  .time {
-    font-size: 13px;
-    color: #999;
-  }
-
-  .bottom {
-    margin-top: 13px;
-    line-height: 12px;
-  }
-
-  .button {
-    padding: 0;
-    float: right;
-  }
-
-  .image {
-    width: 100%;
-    display: block;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
-  }
-
-  .clearfix:after {
-    clear: both;
   }
 }
 </style>

@@ -39,6 +39,7 @@ export const api_userAccount = () =>
   requests({
     url: `/user/account`,
     methods: "get",
+    time: Date.now(),
   });
 
 // 5.获取用户信息(歌单，收藏等)
